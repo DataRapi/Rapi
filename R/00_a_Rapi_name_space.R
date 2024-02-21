@@ -3,6 +3,7 @@ create_Rapi_environment <- function() {
   return(Rapi_env)
 }
 
+
 # Rapi Package namespace ......................................................
 # ..................Rapi
 # Rapi package env
