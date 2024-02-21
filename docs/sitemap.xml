@@ -22,6 +22,9 @@
     <loc>/reference/Rapi-build-checks.html</loc>
   </url>
   <url>
+    <loc>/reference/Rsearch-build-checks.html</loc>
+  </url>
+  <url>
     <loc>/reference/change_cache_folder.html</loc>
   </url>
   <url>
@@ -47,6 +50,9 @@
   </url>
   <url>
     <loc>/reference/print.Rapi_GETPREP.html</loc>
+  </url>
+  <url>
+    <loc>/reference/print.Rsearch_GETPREP.html</loc>
   </url>
   <url>
     <loc>/reference/print.vyos_GETPREP.html</loc>
