@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^\.txt
+^\.xlsx$
+^LICENSE\.md$
+^caches_Rapi$
+^APIKEYS$
+^some\.c\.txt
+^cran-comments\.md$
+^docs
+^CRAN-SUBMISSION$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

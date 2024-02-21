@@ -1,0 +1,34 @@
+# main imports
+useDynLib(Rapi, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+
+ importFrom("utils", "packageVersion")
+
+
+# Rapi Package
+export(get_series)
+export(set_api_key)
+export(lag_df)
+export(lag_df2)
+export(remove_na_safe)
+export(template_test)
+export(excel)
+export(inn)
+export(`%inn%`)
+export(remove_columns)
+export(change_cache_folder)
+export(verbose_on)
+export(verbose_off)
+
+
+# S3 methods
+S3method(print,Rapi_GETPREP)
+
+# imports
+importFrom("utils", "read.delim2")
+importFrom(magrittr, `%>%`)
+importFrom(rlang, `%||%`)
+importFrom("utils", "installed.packages")
+
+
+
