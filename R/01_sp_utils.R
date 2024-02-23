@@ -1,6 +1,4 @@
-check_early <- function() {
-  devtools::check()
-}
+
 get_hash <- function(n = 50) {
   a <- do.call(paste0, replicate(3, sample(LETTERS, n, TRUE), FALSE))
   paste0(a, sprintf("%04d", sample(9999, n, TRUE)), sample(LETTERS, n, TRUE))
@@ -53,15 +51,19 @@ get_print_tibble <- function(x) {
   a <- utils::capture.output(print(x))
   paste0(a, collapse = "\n")
 }
+
 assign_ <- function(name, data) {
+  # development related function
   # assign(name , data , envir = rlang::global_env())
 }
 hash_func <- function(v) {
   g <- paste0(v, collapse = "_")
-  name. <- digest::digest(g)
-  name.
+  digest::digest(g)
+
 }
+
 g <- glue::glue
+
 get_safe <- function(item, env = rlang::global_env(), default = F) {
   sonuc <- default
   try(silent = T, {
@@ -91,13 +93,7 @@ is_bad <- function(item = NA) {
 inv <- function(...) {
   invisible(...)
 }
-gwrap <- function(..., env = rlang::caller_env(), color = crayon::blue) {
-  .f <- function(...) {
-    x <- glue::glue(..., .envir = env)
-    color(x)
-  }
-  .f(...)
-}
+
 enumerate <- function(items = c("a", "b", "c")) {
   rlist::list.zip(
     index = seq(len(items)),
@@ -156,9 +152,10 @@ create_cache_name_from_list <- function(dots) {
   v <- unlist(dots)
   h <- hash_func(v)
 }
+
 success <- function(...) {
   args <- list(...)
   for (item in args) {
-    cat(crayon::green$bold(paste("\n", item)))
+    .green(paste("\n", item))
   }
 }

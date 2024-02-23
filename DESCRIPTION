@@ -1,7 +1,7 @@
 Package: Rapi
 Type: Package
 Title: Interface for Multiple Data Providers 'EDDS' and 'FRED'
-Version: 1.0.3
+Version: 1.0.4
 Date: 2024-02-19
 Authors@R: c(
     person("Sermet", "Pekin", , "sermetpekin@gmail.com", role = c("aut", "cre" , "cph"))

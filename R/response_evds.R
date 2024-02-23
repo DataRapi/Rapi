@@ -10,7 +10,7 @@ getLineEvdsResponse <- function(item) {
   list(date = unix_time, value = value)
 }
 getLineEvdsResponse_patch_week <- function(item) {
-  assign_("d_item", item)
+
   # $Tarih
   # [1] "06-01-1950"
   #
@@ -48,10 +48,7 @@ getLineEvdsResponse2 <- function(item) {
   new_list
 }
 getLineEvdsResponse3 <- function(item) {
-  # item_name = "item"
-  # if( !dynamic_exists( item_name)){
-  #   assign( "item" ,item, envir = .GlobalEnv )
-  # }
+
   # snames<- names_[ names_[c("Tarih" , "UNIXTIME")]  ]
   names_ <- names(item)
   yliste <- list()
@@ -82,7 +79,7 @@ getLineEvdsResponse3 <- function(item) {
 }
 #
 convert_list_df_evds <- function(items, strategy = getLineEvdsResponse) {
-  assign_("d_items", items)
+
 
   lines_ <- null
 
