@@ -17,7 +17,7 @@ check_connection_google <- function() {
   check_web_connection("https://www.google.com")
 }
 check_connection_documentation <- function() {
-  check_web_connection("https://DataRapi.github.io/Rapi/")
+  check_web_connection("https://datarapi.github.io/Rapi/")
 }
 
 check_list_connections <- function(verbose = TRUE) {
