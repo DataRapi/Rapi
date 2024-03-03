@@ -117,7 +117,7 @@ namespace Rapi
     Rc_vec_char get_col_names(const Rc_df &dfx) { return dfx.names(); }
     Rc_vec_char get_col_names() { return df.names(); }
     //............................... col_exists
-    bool col_exists(s_string & col_name)
+    bool col_exists(const s_string & col_name)
     {
       for (const auto &x : get_col_names())
       {
