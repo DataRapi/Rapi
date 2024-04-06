@@ -6,7 +6,7 @@ Date: 2024-04-06
 Authors@R: c(
     person("Sermet", "Pekin", , "sermet.pekin@gmail.com", role = c("aut", "cre" , "cph"))
   )
-Maintainer: Sermet Pekin <sermetpekin@gmail.com>
+Maintainer: Sermet Pekin <sermet.pekin@gmail.com>
 URL: https://github.com/DataRapi/Rapi, https://DataRapi.github.io/Rapi/
 BugReports: https://github.com/DataRapi/Rapi/issues
 Description: Interface for multiple data sources, such as the 
