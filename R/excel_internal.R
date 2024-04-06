@@ -43,12 +43,10 @@ excel_internal <- function(
     return(invisible(1))
   }
   if (!inherits(dfs, "list") && !inherits(dfs, "data.frame")) {
-
     message_func("excel function requires data.frame or list of data.frames(1)")
     return(invisible(1))
   }
   if (!len(dfs)) {
-
     message_func("excel function requires data.frame or list of data.frames(2)")
     return(invisible(2))
   }

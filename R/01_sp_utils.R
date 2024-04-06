@@ -1,4 +1,3 @@
-
 get_hash <- function(n = 50) {
   a <- do.call(paste0, replicate(3, sample(LETTERS, n, TRUE), FALSE))
   paste0(a, sprintf("%04d", sample(9999, n, TRUE)), sample(LETTERS, n, TRUE))
@@ -59,7 +58,6 @@ assign_ <- function(name, data) {
 hash_func <- function(v) {
   g <- paste0(v, collapse = "_")
   digest::digest(g)
-
 }
 
 g <- glue::glue

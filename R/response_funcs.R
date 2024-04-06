@@ -8,7 +8,6 @@ response_fnc_fred <- function(gelen, currentObj) {
   structure(result, series_code = currentObj$seriesID)
 }
 response_fnc_evds <- function(gelen, currentObj) {
-
   contentList <- gelen %>% httr2::resp_body_json()
   convert_list_df_evds(contentList$items)
 }
@@ -19,9 +18,8 @@ convert_list_df_general <- function(response_list) {
     if (is.null(lines_)) {
       lines_ <- as.data.frame(line)
     } else {
-
       try({
-        lines_ <- rbind_safe(lines_,  as.data.frame(line) )
+        lines_ <- rbind_safe(lines_, as.data.frame(line))
       })
     }
   }

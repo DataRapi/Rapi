@@ -86,7 +86,7 @@ get_evds_table_info_api <- function(table_name = "bie_altingr", cache = T) {
   url <- create_evds_url("info_api",
     table_name = table_name
   )
-  gelen <- request_httr2_helper(url, cache)
+  gelen <- request_httr2_helper_evds(url, cache)
   if (!is_response(gelen)) {
     return(false)
   }

@@ -108,6 +108,8 @@ safe_remove_col <- function(df, colname) {
   df %>% dplyr::select(-c(!!colname))
 }
 df_check_remove <- function(df, verbose = FALSE) {
+
+ if(!is.data.frame(df )) return (df )
   first_row <- first_row_that_ok(df)
   last_row <- last_row_that_ok(df)
   if (any(purrr::map_vec(c(first_row, last_row), is.na))) {

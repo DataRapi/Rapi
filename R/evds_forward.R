@@ -14,18 +14,26 @@ create_evds_url <- function(type = c(
     api_key_evds <- get_api_key("evds")
   }
   g <- glue::glue
+
+  # liste <- list(
+  #   subject = g("{domain}/categories/key={api_key_evds}&type=json"),
+  #   datagroups = g("{domain}/datagroups/key={api_key_evds}&mode=2&code={subject_num}&type=json"),
+  #   info_api = g("{domain}/serieList/key={api_key_evds}&type=json&code={table_name}")
+  # )
+
   liste <- list(
-    subject = g("{domain}/categories/key={api_key_evds}&type=json"),
-    datagroups = g("{domain}/datagroups/key={api_key_evds}&mode=2&code={subject_num}&type=json"),
-    info_api = g("{domain}/serieList/key={api_key_evds}&type=json&code={table_name}")
+    subject = g("{domain}/categories/type=json"),
+    datagroups = g("{domain}/datagroups/mode=2&code={subject_num}&type=json"),
+    info_api = g("{domain}/serieList/type=json&code={table_name}")
   )
+
   liste[[type]]
 }
 
 get_evds_table_names_with_subject_num <- function(subject_num = 5,
                                                   cache = F) {
   url <- create_evds_url("datagroups", subject_num)
-  response <- request_httr2_helper(url, cache)
+  response <- request_httr2_helper_evds(url, cache)
   if (!is_response(response)) {
     return(false)
   }
@@ -38,7 +46,7 @@ get_evds_table_names_with_subject_num <- function(subject_num = 5,
 # ....................................................... get_evds_table_info_api
 get_evds_subject_list_api <- function(cache = T) {
   url <- create_evds_url("subject")
-  response <- request_httr2_helper(url, cache)
+  response <- request_httr2_helper_evds(url, cache)
   if (!is_response(response)) {
     return(false)
   }

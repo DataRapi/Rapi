@@ -1,5 +1,5 @@
 limit_years_of_data <- function(.data, dots_params) {
-  if (is.null(.data)) {
+  if (is.null(.data)|| isFALSE(.data)) {
     return(null)
   }
 

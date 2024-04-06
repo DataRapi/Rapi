@@ -12,8 +12,9 @@ request_httr <- function(currentObj) {
 }
 request_httr2 <- function(currentObj) {
   # evds
+  Rapi_env$currentObj <- currentObj
   url <- createUrlForSeries(currentObj)
-  request_httr2_helper(url, currentObj$cache)
+  request_httr2_helper_evds(url, currentObj$cache)
 }
 seriesCollapse <- function(liste) {
   names_ <- names(liste)
@@ -86,7 +87,7 @@ get_freq_number_evds <- function(freq) {
       m = "month",
       y = "year",
       q = "quarter",
-      w = "week" ,
+      w = "week",
       "null" = "day"
     ) # series will default to most freq possible so
     # null should be the most frequent
@@ -107,7 +108,6 @@ get_freq_number_evds <- function(freq) {
   freq_u
 }
 check_freq_only_evds_series <- function(currentObj, urlParts) {
-
   .base <- toString(attr(urlParts$series, "base"))
   .source <- toString(attr(urlParts$series, "source"))
   if (!(is_(.base, "series") && is_(.source, "evds"))) {
@@ -137,23 +137,25 @@ createUrlForSeries <- function(currentObj) {
   urlParts <- currentObj$series_fnc(prop_value)
   # freq is not needed in table ones only series of evds
   urlParts <- check_freq_only_evds_series(currentObj, urlParts) # side effect start date will be checked
+
+
+  Rapi_env$urlParts <- urlParts
+
   urlParts <- check_series_ID_for_dots(currentObj, urlParts) # replace '_' , '.'
+
+  urlParts$key <- null
   paste0(
     currentObj$url,
     currentObj$observations_url,
     seriesCollapse(urlParts)
   )
 }
-# ...................................................... request_httr2_helper
-request_httr2_helper <- function(url, cache = TRUE) {
 
-  cache_name <- cache_name_format("request_httr2_helper", url)
-  check <- check_cache_comp(cache_name, cache)
-  if (check) {
-    return(load_cache(cache_name))
-  }
-  # check if vector
-  check_url_for_request(url)
+
+
+
+
+req_version_1_no_header <- function(url) {
   # ..................... 1
   req <- try_or_default(
     {
@@ -168,6 +170,75 @@ request_httr2_helper <- function(url, cache = TRUE) {
     },
     .default = null
   )
+  return(inv(resp))
+}
+
+req_version_2_w_header <- function(url) {
+  # currently only EVDS request uses this version due to header policy change
+  # TODO generalize if new source being added
+  api_key <- get_api_key("evds")
+
+  req <- httr2::request(url)
+  req <- req |> httr2::req_headers(key = api_key)
+
+  # req |> httr2::req_dry_run()
+    suppressWarnings({
+        resp <- try_or_default(
+            {
+                req |> httr2::req_perform()
+            },
+            .default = null
+        )
+
+    })
+
+  return(inv(resp))
+}
+# request_with_param <- function(url) {
+#   api_key <- get_api_key("evds")
+#   req <- httr2::request(url)
+#   req <- req |> httr2::req_headers(Bearer = api_key)
+#
+#   req |> httr2::req_dry_run()
+#   response <- req |> httr2::req_perform()
+#
+#   return(response)
+# }
+
+# ...................................................... request_httr2_helper
+request_httr2_helper_evds <- function(url, cache = TRUE) {
+  cache_name <- cache_name_format("request_httr2_helper_evds", url)
+  check <- check_cache_comp(cache_name, cache)
+  if (check) {
+    return(load_cache(cache_name))
+  }
+  # check if vector
+  check_url_for_request(url)
+  Rapi_env$last_req_url <- url
+
+  # resp <- req_version_1_no_header(url) # with no Param
+  resp <- req_version_2_w_header(url) # with PARAM
+
+  if (is_response(resp)) {
+    save_cache(cache_name, resp)
+  }
+  inv(resp)
+}
+
+# ...................................................... request_httr2_helper
+request_httr2_helper <- function(url, cache = TRUE) {
+  cache_name <- cache_name_format("request_httr2_helper", url)
+  check <- check_cache_comp(cache_name, cache)
+  if (check) {
+    return(load_cache(cache_name))
+  }
+  # check if vector
+  check_url_for_request(url)
+  Rapi_env$last_req_url <- url
+
+  resp <- req_version_1_no_header(url)
+
+
   if (is_response(resp)) {
     save_cache(cache_name, resp)
   }

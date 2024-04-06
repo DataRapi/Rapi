@@ -55,6 +55,7 @@ combine_df <- function(x, ...) {
   df
 }
 combine_dfs_by_date2 <- function(liste) {
+
   combined <- NULL
   for (item in liste) {
     item2 <- item
@@ -116,7 +117,7 @@ get_data_all <- function(x) {
 
       DATA <- post_process_data_main(DATA, x)
 
-      if (is.null(DATA)) {
+      if (is.null(DATA) || isFALSE(DATA)) {
         data.[[row]] <- "null"
       } else {
         data.[[row]] <- DATA

@@ -1,10 +1,10 @@
 Package: Rapi
 Type: Package
 Title: Interface for Multiple Data Providers 'EDDS' and 'FRED'
-Version: 1.0.4
-Date: 2024-02-19
+Version: 1.0.5
+Date: 2024-04-06
 Authors@R: c(
-    person("Sermet", "Pekin", , "sermetpekin@gmail.com", role = c("aut", "cre" , "cph"))
+    person("Sermet", "Pekin", , "sermet.pekin@gmail.com", role = c("aut", "cre" , "cph"))
   )
 Maintainer: Sermet Pekin <sermetpekin@gmail.com>
 URL: https://github.com/DataRapi/Rapi, https://DataRapi.github.io/Rapi/
