@@ -29,4 +29,4 @@ cran-comments.md
 APIKEYS/
 *SECRET*.*
 !data-deps.txt
-
+caches_Rsearch/
