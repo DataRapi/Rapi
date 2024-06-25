@@ -1,0 +1,12 @@
+version: '3'
+services:
+  rapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rapi:latest
+
+
+# docker-compose build
+# docker-compose build rapi
+# docker-compose run rapi
