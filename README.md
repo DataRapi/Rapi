@@ -1,11 +1,8 @@
 
 ## Rapi
-[![R-CMD-check](https://github.com/DataRapi/Rapi/actions/workflows/R_CMD_check.yml/badge.svg)](https://github.com/DataRapi/Rapi/actions/workflows/R_CMD_check.yml)
+## [![CRAN_Status_Badge](https://img.shields.io/cran/v/Rapi?color=952100)](https://cran.r-project.org/package=Rapi) [![R-CMD-check](https://github.com/DataRapi/Rapi/actions/workflows/R_CMD_check.yml/badge.svg)](https://github.com/DataRapi/Rapi/actions/workflows/R_CMD_check.yml)
+ 
 
-Rapi download stats
----------
-
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/Rapi?color=green)](https://cran.r-project.org/package=Rapi)
 [![DOI](https://zenodo.org/badge/761353779.svg)](https://zenodo.org/doi/10.5281/zenodo.10800216)
 
 ![](https://cranlogs.r-pkg.org/badges/grand-total/Rapi?color=green)
