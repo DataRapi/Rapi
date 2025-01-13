@@ -28,11 +28,11 @@ excel(
 \item{...}{for future versions}
 }
 \value{
-it returns object or list of data frame back
+it returns object or list of \code{dataframe} back
 }
 \description{
 The excel() function creates an excel file according to the object given.
-data.frame or List of data frame or Rapi_GETPREP object can be passed..
+\code{data.frame} or List of data frame or \code{Rapi_GETPREP} object can be passed..
 }
 \examples{
 \dontrun{

@@ -7,22 +7,22 @@
 remove_na_safe(df , verbose = FALSE )
 }
 \arguments{
-\item{df}{data.frame to remove na rows from the beginning and from the end}
+\item{df}{data.frame to remove \code{NA} rows from the beginning and from the end}
 
-\item{verbose}{give detailed info while removing NA values}
+\item{verbose}{give detailed info while removing \code{NA} values}
 }
 \value{
-data.frame returns data.frame after removing rows if all columns are NA
+data.frame returns data.frame after removing rows if all columns are \code{NA}
 from the beginning and after
 }
 \description{
 This function removes rows from both ends of a data frame until it identifies
-a row where all columns have non-NA values. Starting from the beginning, it
+a row where all columns have \code{non-NA} values. Starting from the beginning, it
 removes rows until it encounters a row with complete data at a specific row
 index (e.g., row 5).
 It then proceeds to remove rows from the end of the data frame, eliminating
-any rows with at least one NA value in any column.
-The process stops when it finds a row where all columns contain non-NA values,
+any rows with at least one \code{NA} value in any column.
+The process stops when it finds a row where all columns contain \code{non-NA} values,
 and the resulting data frame is returned.
 }
 \examples{

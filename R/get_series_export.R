@@ -1,6 +1,6 @@
 #' Requests data from multiple data sources.
 #'
-#' The `get_series()` function retrieves data from various sources, including the EDDS API and FRED API at this version.
+#' The `get_series()` function retrieves data from various sources, including the `EDDS` API and `FRED` API at this version.
 #' When multiple indexes are provided as a character vector or string template, the function individually
 #' requests each item from the corresponding sources, discerning the source from the item's format.
 #' The function combines data frames when there are common frequencies and returns both a combined data frame and
@@ -18,7 +18,7 @@
 #' If verbose option is FALSE it gives a warning only if something goes wrong.
 #' @param ... Additional parameters for future versions.
 #' @param debug Debug option for development.
-#' @param source Source such as "evds" or "fred" for internal use at this version.
+#' @param source Source such as `evds` or `fred` for internal use at this version.
 #' @param base Table or series on the source for internal use at this version.
 #' @return An S3 object, Rapi_GETPREP, which has generic functions such as print and excel.
 #' The `print` generic provides hints to the user on how to use requested data,

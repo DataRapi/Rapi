@@ -2,14 +2,14 @@
 #' Rapi_GETPREP object.
 #' @description
 #' The excel() function creates an excel file according to the object given.
-#' data.frame or List of data frame or Rapi_GETPREP object can be passed..
+#' `data.frame` or List of data frame or `Rapi_GETPREP` object can be passed..
 #' @param dfs object or list of data frame to write
 #' @param file_name file name to save
 #' @param folder folder to save file
 #' @param .debug for internal use
 #' @param env environment
 #' @param ... for future versions
-#' @return it returns object or list of data frame back
+#' @return it returns object or list of `dataframe` back
 #' @export
 #' @examples
 #' \dontrun{

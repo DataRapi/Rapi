@@ -7,16 +7,16 @@
 set_api_key(key = null, source_name = null, option = c("env", "file"), ...)
 }
 \arguments{
-\item{key}{api key of the source}
+\item{key}{API key of the source}
 
-\item{source_name}{evds or fred}
+\item{source_name}{\code{evds} or \code{fred}}
 
-\item{option}{choice of later usage. env or file should be given to
-save api key for later use. Default is env which
-saves api key as environment variable.
-if \code{env} default value is selected it will save api key
+\item{option}{choice of later usage. \code{env} or file should be given to
+save API key for later use. Default is env which
+saves API key as environment variable.
+if \code{env} default value is selected it will save API key
 as an environment variable
-if \code{file} was selected it will save api key to current folder.}
+if \code{file} was selected it will save API key to current folder.}
 
 \item{...}{for future versions}
 }

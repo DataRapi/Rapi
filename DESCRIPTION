@@ -1,8 +1,8 @@
 Package: Rapi
 Type: Package
-Title: Interface for Multiple Data Providers 'EDDS' and 'FRED'
-Version: 1.0.5
-Date: 2024-04-06
+Title: Interface for Multiple Data Providers `EDDS` and `FRED`
+Version: 1.0.6
+Date: 2025-01-13
 Authors@R: c(
     person("Sermet", "Pekin", , "sermet.pekin@gmail.com", role = c("aut", "cre" , "cph"))
   )
@@ -10,9 +10,9 @@ Maintainer: Sermet Pekin <sermet.pekin@gmail.com>
 URL: https://github.com/DataRapi/Rapi, https://DataRapi.github.io/Rapi/
 BugReports: https://github.com/DataRapi/Rapi/issues
 Description: Interface for multiple data sources, such as the 
-    'EDDS' API <https://evds2.tcmb.gov.tr/index.php?/evds/userDocs> of the 
+    `EDDS` API <https://evds2.tcmb.gov.tr/index.php?/evds/userDocs> of the 
     Central Bank of the Republic of Türkiye and the 
-    'FRED' API <https://fred.stlouisfed.org/docs/api/fred/> of the Federal Reserve Bank. 
+    `FRED` API <https://fred.stlouisfed.org/docs/api/fred/> of the Federal Reserve Bank. 
     Both data providers require API keys for access, which users can easily obtain 
     by creating accounts on their respective websites. 
     The package provides caching ability with the selection of periods to increase the 
@@ -26,26 +26,12 @@ LinkingTo: Rcpp
 Depends:
     R (>= 3.4.3),
     Rcpp
-Imports:
-    crayon, 
-    digest,
-    dplyr,
-    httr,
-    httr2,
-    glue,
-    jsonlite,
-    lubridate,
-    magrittr,
-    purrr,
-    rlang,
-    rlist,
-    stringr,
-    tibble
-Suggests: 
-    writexl ,
-    devtools,
-    testthat
+Imports: crayon, digest, dplyr,
+    httr, httr2, glue, jsonlite,
+    lubridate, magrittr, purrr, rlang, 
+    rlist, stringr, tibble, writexl 
+Suggests: devtools, testthat
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Config/testthat/edition: 3

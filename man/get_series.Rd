@@ -38,7 +38,7 @@ If verbose option is FALSE it gives a warning only if something goes wrong.}
 
 \item{...}{Additional parameters for future versions.}
 
-\item{source}{Source such as "evds" or "fred" for internal use at this version.}
+\item{source}{Source such as \code{evds} or \code{fred} for internal use at this version.}
 
 \item{base}{Table or series on the source for internal use at this version.}
 
@@ -50,7 +50,7 @@ The \code{print} generic provides hints to the user on how to use requested data
 such as creating output with the \code{excel} function or examining requested data in the global environment.
 }
 \description{
-The \code{get_series()} function retrieves data from various sources, including the EDDS API and FRED API at this version.
+The \code{get_series()} function retrieves data from various sources, including the \code{EDDS} API and \code{FRED} API at this version.
 When multiple indexes are provided as a character vector or string template, the function individually
 requests each item from the corresponding sources, discerning the source from the item's format.
 The function combines data frames when there are common frequencies and returns both a combined data frame and

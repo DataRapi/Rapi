@@ -4,10 +4,10 @@
 #' and lag sequences. This feature is beneficial for scenarios where you need
 #' varying lag selections for certain columns, allowing flexibility in specifying
 #' different lags for different columns or opting for no lag at all.
-#' @param df A data.frame or tibble.
+#' @param df A data.frame or `tibble`.
 #' @param laglist A list of column names where each index corresponds to a column
 #' name and the associated value is the lag sequence.
-#' @return tibble
+#' @return `tibble`
 #' @export
 #'
 #' @examples
@@ -26,7 +26,7 @@ as_tibblex <- function(df) {
 #' and lag sequences. This feature is beneficial for scenarios where you need
 #' varying lag selections for certain columns, allowing flexibility in specifying
 #' different lags for different columns or opting for no lag at all.
-#' @param df A data.frame or tibble.
+#' @param df A data.frame or `tibble`.
 #' @param laglist A list of column names where each index corresponds to a column
 #' name and the associated value is the lag sequence.
 #' @return data.frame

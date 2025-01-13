@@ -7,7 +7,7 @@
 lag_df2(df, laglist)
 }
 \arguments{
-\item{df}{A data.frame or tibble.}
+\item{df}{A data.frame or \code{tibble}.}
 
 \item{laglist}{A list of column names where each index corresponds to a column
 name and the associated value is the lag sequence.}

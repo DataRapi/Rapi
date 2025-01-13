@@ -12,7 +12,7 @@
 ## Overview
 
 Rapi package is an interface to make requests from data providers. 
-Current version is able to connect to APIs of [EDDS](https://evds2.tcmb.gov.tr/index.php?/evds/userDocs/) of CBRT (Central Bank of the Republic of Türkiye)
+Current version is able to connect to APIs of [`EDDS`](https://evds2.tcmb.gov.tr/index.php?/evds/userDocs/) of CBRT (Central Bank of the Republic of Türkiye)
 and [FRED API](https://fred.stlouisfed.org/docs/api/fred/) of FED (Federal Reserve Bank). 
 
 ## Installation
@@ -41,7 +41,7 @@ install_github("DataRapi/Rapi")
 
 
 ``` r
-# Set API keys for EDDS
+# Set API keys for `EDDS`
 set_api_key("YOUR_EDDS_API_KEY", "evds", "env")
 # Set API keys for FRED
 set_api_key("YOUR_FRED_API_KEY", "fred", "env")
@@ -465,12 +465,12 @@ excel(obj, "file_name.xlsx", "somefolder")
 ```
 ## Getting API Keys
 
-To access data from EDDS (CBRT) and FRED (FED), users need to obtain API keys by creating accounts on their respective websites.
+To access data from `EDDS` (CBRT) and FRED (FED), users need to obtain API keys by creating accounts on their respective websites.
 
-### EDDS (CBRT) API Key
+### `EDDS` (CBRT) API Key
 
-1. Visit the [EDDS (CBRT) API Documentation](https://evds2.tcmb.gov.tr/index.php?/evds/userDocs).
-2. Create an account on the EDDS website if you don't have one.
+1. Visit the [`EDDS` (CBRT) API Documentation](https://evds2.tcmb.gov.tr/index.php?/evds/userDocs).
+2. Create an account on the `EDDS` website if you don't have one.
 3. Follow the documentation to generate your API key.
 
 ### FRED (FED) API Key

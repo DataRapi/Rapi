@@ -142,14 +142,14 @@ show_usage <- function(func_name = "set_api_key",
 
 #' set_api_key
 #'
-#' @param key api key of the source
-#' @param source_name evds or fred
-#' @param option choice of later usage. env or file should be given to
-#' save api key for later use. Default is env which
-#' saves api key as environment variable.
-#' if `env` default value is selected it will save api key
+#' @param key API key of the source
+#' @param source_name `evds` or `fred`
+#' @param option choice of later usage. `env` or file should be given to
+#' save API key for later use. Default is env which
+#' saves API key as environment variable.
+#' if `env` default value is selected it will save API key
 #' as an environment variable
-#' if `file` was selected it will save api key to current folder.
+#' if `file` was selected it will save API key to current folder.
 #' @param ... for future versions
 #' @return
 #'  The function has no return value.
