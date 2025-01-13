@@ -27,6 +27,8 @@ CRAN-SUBMISSION
 cran-comments.md
 *.Rproj
 Main.R
+*.xlsx
+
 
 APIKEYS/
 *SECRET*.*
