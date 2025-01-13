@@ -173,27 +173,31 @@ req_version_1_no_header <- function(url) {
   return(inv(resp))
 }
 
-req_version_2_w_header <- function(url) {
+
+req_version_2_w_header <- function(url, key = NULL) {
   # currently only EVDS request uses this version due to header policy change
   # TODO generalize if new source being added
-  api_key <- get_api_key("evds")
+  api_key <- key
+  if (is.null(key)) {
+    api_key <- get_api_key("evds")
+  }
 
   req <- httr2::request(url)
   req <- req |> httr2::req_headers(key = api_key)
 
-  # req |> httr2::req_dry_run()
-    suppressWarnings({
-        resp <- try_or_default(
-            {
-                req |> httr2::req_perform()
-            },
-            .default = null
-        )
 
-    })
+  suppressWarnings({
+    resp <- try_or_default(
+      {
+        req |> httr2::req_perform()
+      },
+      .default = null
+    )
+  })
 
   return(inv(resp))
 }
+
 # request_with_param <- function(url) {
 #   api_key <- get_api_key("evds")
 #   req <- httr2::request(url)
